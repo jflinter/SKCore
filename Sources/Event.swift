@@ -146,7 +146,7 @@ public class Event {
     public let domain: String?
     public let emailDomain: String?
     public let reaction: String?
-    public let replyTo: String?
+    public let replyTo: Int?
     public let reactions: [[String: Any]]?
     public let edited: Edited?
     public let bot: Bot?
@@ -185,7 +185,7 @@ public class Event {
         domain = event["domain"] as? String
         emailDomain = event["email_domain"] as? String
         reaction = event["reaction"] as? String
-        replyTo = event["reply_to"] as? String
+        replyTo = event["reply_to"] as? Int
         reactions = event["reactions"] as? [[String: Any]]
         bot = Bot(bot: event["bot"] as? [String: Any])
         edited = Edited(edited:event["edited"] as? [String: Any])
